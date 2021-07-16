@@ -1,0 +1,22 @@
+.profile__updateAvatar-button {
+    width: 100%;
+    min-height: 100%;
+    background: none;
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.profile__updateAvatar-button:hover {
+    background: url(../../../images/updateAvatar.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: opacity .5s ease;
+    outline: none;
+}
+
+.profile__updateAvatar-button:focus {
+    outline: none;
+}

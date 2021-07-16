@@ -1,0 +1,8 @@
+.place__remove-icon_active {
+    visibility: visible;
+}
+
+.place__remove-icon_active:hover {
+    outline: none;
+    opacity: .5;
+}

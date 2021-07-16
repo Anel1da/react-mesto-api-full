@@ -1,0 +1,7 @@
+.popup__container_preview {
+    width: auto;
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
+}

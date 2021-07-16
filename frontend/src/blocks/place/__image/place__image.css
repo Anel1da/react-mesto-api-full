@@ -1,0 +1,21 @@
+.place__image {
+    width: 282px;
+    height: 282px;
+    object-fit: cover;
+    object-position: top;
+    margin: 0;
+    transition: opacity .5s ease;
+    cursor: pointer;
+}
+
+.place__image:hover {
+    opacity: .6;
+}
+
+.place__image::after {
+    width: 282px;
+    height: 282px;
+    content: '';
+    background-color: rgba(0, 0, 0, .3);
+    display: block;
+}

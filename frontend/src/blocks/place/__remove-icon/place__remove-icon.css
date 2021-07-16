@@ -1,0 +1,13 @@
+.place__remove-icon {
+    background-image: url(../../../images/Trash.svg);
+    height: 19.3px;
+    width: 18px;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: absolute;
+    top: 18px;
+    right: 15px;
+    background-color: transparent;
+    visibility: hidden;
+}
