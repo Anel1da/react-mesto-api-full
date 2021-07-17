@@ -2,8 +2,8 @@
 
 
 ## IP-адрес сервера на Яндекс.Облаке
-#### __ 178.154.196.133 (bold italic)___
+####  178.154.196.133 
 
 ## Домены проекта
-- __Фронтенд: http://project-mesto.nomoredomains.monster/ (bold italic)___
-- __Бэкенд:  http://api.project-mesto.nomoredomains.work/ (bold italic)___
+- Фронтенд: http://project-mesto.nomoredomains.monster/ 
+- Бэкенд:  http://api.project-mesto.nomoredomains.work/ 
