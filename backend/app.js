@@ -29,7 +29,7 @@ const { login, createUser } = require("./controllers/users");
 const userRoutes = require("./routes/users");
 const cardRoutes = require("./routes/cards");
 
-// мидлвэрыcd
+// мидлвэры
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
@@ -51,7 +51,7 @@ app.post(
       password: Joi.string().min(8).required(),
     }),
   }),
-  login,
+  login
 );
 app.post(
   "/signup",
@@ -66,14 +66,15 @@ app.post(
             require_tld: true,
             require_protocol: true,
           })
-        ) return value;
+        )
+          return value;
         return helpers.message("Некорректный формат ссылки");
       }),
       email: Joi.string().required().email(),
       password: Joi.string().min(8).required(),
     }),
   }),
-  createUser,
+  createUser
 );
 
 app.use(auth);
