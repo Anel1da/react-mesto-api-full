@@ -97,9 +97,3 @@ export default class Api {
     }).then(this.getResponse);
   }
 }
-
-export const api = new Api({
-  adress: "https://mesto.nomoreparties.co/v1/",
-  token: "4342b75a-e8c5-4095-978c-b573b1ddd509",
-  groupId: "cohort-22",
-});
