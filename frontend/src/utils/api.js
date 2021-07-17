@@ -99,5 +99,5 @@ export default class Api {
 }
 
 export const api = new Api({
-  adress: "http://project-mesto.nomoredomains.monster/",
+  adress: "http://api.project-mesto.nomoredomains.work/",
 });
