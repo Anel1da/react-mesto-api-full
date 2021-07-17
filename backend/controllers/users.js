@@ -1,4 +1,3 @@
-const { NODE_ENV, JWT_SECRET } = process.env;
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../models/users");
@@ -10,18 +9,18 @@ const ConflictError = require("../errors/conflict-err"); // 409
 
 // регистрация пользователя
 module.exports.createUser = (req, res, next) => {
-  const {
-    name, about, avatar, email, password,
-  } = req.body;
+  const { name, about, avatar, email, password } = req.body;
   bcrypt
     .hash(password, 10)
-    .then((hash) => User.create({
-      name,
-      about,
-      avatar,
-      email,
-      password: hash,
-    }))
+    .then((hash) =>
+      User.create({
+        name,
+        about,
+        avatar,
+        email,
+        password: hash,
+      })
+    )
     .then((user) => {
       res.status(200).send(user);
     })
@@ -40,13 +39,9 @@ module.exports.login = (req, res, next) => {
   const { email, password } = req.body;
   return User.findUserByCredentials(email, password)
     .then((user) => {
-      const token = jwt.sign(
-        { _id: user._id },
-        NODE_ENV === "production" ? JWT_SECRET : "dev-secret",
-        {
-          expiresIn: "7d",
-        },
-      );
+      const token = jwt.sign({ _id: user._id }, "some-secret-key", {
+        expiresIn: "7d",
+      });
       res
         .cookie("jwt", token, {
           maxAge: 3600000 * 24 * 7,
@@ -109,7 +104,7 @@ module.exports.updateProfile = (req, res, next) => {
   const { name, about } = req.body;
   if (!name || !about) {
     throw new BadRequestError(
-      "Переданы некорректные данные, проверьте правильность заполнения полей",
+      "Переданы некорректные данные, проверьте правильность заполнения полей"
     );
   }
   return User.findByIdAndUpdate(
@@ -118,7 +113,7 @@ module.exports.updateProfile = (req, res, next) => {
     {
       new: true,
       runValidators: true,
-    },
+    }
   )
     .orFail(new Error("NotValidId"))
     .then((user) => {
@@ -144,7 +139,7 @@ module.exports.updateAvatar = (req, res, next) => {
     {
       new: true,
       runValidators: true,
-    },
+    }
   )
     .orFail(new Error("NotValidId"))
     .then((user) => {
