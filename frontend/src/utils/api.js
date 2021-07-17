@@ -97,3 +97,7 @@ export default class Api {
     }).then(this.getResponse);
   }
 }
+
+export const api = new Api({
+  adress: "http://api.project-mesto.nomoredomains.work/",
+});
