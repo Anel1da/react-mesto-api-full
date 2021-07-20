@@ -1,6 +1,7 @@
 require("dotenv").config();
 
 const express = require("express");
+const helmet = require("helmet");
 
 const app = express();
 const bodyParser = require("body-parser");
@@ -32,6 +33,7 @@ const cardRoutes = require("./routes/cards");
 // мидлвэры
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(helmet());
 app.use(cookieParser());
 app.use(requestLogger);
 
